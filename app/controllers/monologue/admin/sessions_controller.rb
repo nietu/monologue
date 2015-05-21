@@ -1,3 +1,5 @@
+# Do not create sessions or destroy with Monologue - shall be managed by kirjaudu sisään ja sieltä callback monologue admin sivulle
+=begin
 class Monologue::Admin::SessionsController < Monologue::Admin::BaseController
   skip_before_filter :authenticate_user!
   
@@ -20,3 +22,4 @@ class Monologue::Admin::SessionsController < Monologue::Admin::BaseController
     redirect_to admin_url, notice: t("monologue.admin.sessions.messages.logged_out")
   end
 end
+=end
