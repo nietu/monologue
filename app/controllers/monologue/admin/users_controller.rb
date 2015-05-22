@@ -1,5 +1,5 @@
 class Monologue::Admin::UsersController < Monologue::Admin::BaseController
-
+=begin
   before_filter :load_user, except: [:index, :new, :create]
 
   def edit
@@ -49,4 +49,5 @@ class Monologue::Admin::UsersController < Monologue::Admin::BaseController
     def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
+=end
 end

@@ -7,7 +7,7 @@ module Monologue
       include Monologue::ControllerHelpers::User
 
       included do
-        before_filter :authenticate_user!
+        before_filter :authenticate_spree_user!
       end
 
       private
