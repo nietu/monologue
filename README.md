@@ -12,7 +12,7 @@ Monologue is a basic, mountable blogging engine in Rails built to be easily moun
 
 ## Version
 
-This README is for a future Monologue version, that will be 0.4.X and be Rails 4 specific. See other branches for other versions (0-3-stable being the latest stable version).
+This README is for a future Monologue version, that will be 0.4.2 and be compatible with Rails 4.2.x. See other branches for other versions (0-4-stable being the latest stable version).
 
 ## Upgrade and changes
 
@@ -54,7 +54,7 @@ And run `bundle install` to fetch the gem and update your 'Gemfile.lock'.
 
 ### 2. Route to Monologue
 
-Add this to your route file (`config/route.rb`)
+Add this to your route file (`config/routes.rb`)
 ```ruby
 # This line mounts Monologue's routes at the root of your application.
 # This means, any requests to URLs such as /my-post, will go to Monologue::PostsController.
@@ -95,8 +95,12 @@ this might help you to [monkey patch](https://gist.github.com/jipiboily/776d907f
 ## Customization
 See the [Wiki - Customizations](https://github.com/jipiboily/monologue/wiki/Customizations).
 
+## Copy views
+copy views like devise `rails g monologue:views`
+or use scope: `rails g monologue:views blog`
+
 ## Requirements
-- Rails 4.0.4 +
+- Rails 4.2.1 +
 - Database: MySQL & Postgres are supported but other databases might work too.
 
 ## Authors
