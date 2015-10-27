@@ -29,7 +29,11 @@ class Monologue::Post < ActiveRecord::Base
   end
 
   def full_url
-    "#{Monologue::Engine.routes.url_helpers.root_path}#{self.url}"
+    if I18n.locale != I18n.default_locale # set these at main app application_controller and config
+      "#{Monologue::Engine.routes.url_helpers.root_path}/#{self.url}"
+    else
+      "#{Monologue::Engine.routes.url_helpers.root_path}#{self.url}"
+    end
   end
 
   def published_in_future?

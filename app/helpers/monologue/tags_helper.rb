@@ -5,7 +5,11 @@ module Monologue
     NUMBER_OF_LABEL_SIZES = 5
 
     def tag_url(tag)
-      "#{Monologue::Engine.routes.url_helpers.root_path}tags/#{URI.encode(tag.name.mb_chars.to_s.downcase)}"
+      if I18n.locale != I18n.default_locale # set these at main app application_controller and config
+        "#{Monologue::Engine.routes.url_helpers.root_path}/tags/#{URI.encode(tag.name.mb_chars.to_s.downcase)}"
+      else
+        "#{Monologue::Engine.routes.url_helpers.root_path}tags/#{URI.encode(tag.name.mb_chars.to_s.downcase)}"      
+      end
     end
 
     def label_for_tag(tag, min, max)
